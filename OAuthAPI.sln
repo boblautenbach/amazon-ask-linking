@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuth.Api", "OAuth.Api\OAuth.Api.csproj", "{622E9DEA-2208-4A63-9DF3-16EFE327D5F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuth.Logic", "OAuth.Logic\OAuth.Logic.csproj", "{5CC87A01-3351-4F7D-AEC0-D984AB433AC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuth.Models", "OAuth.Models\OAuth.Models.csproj", "{072F8532-9073-4F33-B79E-D5B57FC3A199}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuth.Data", "OAuth.Data\OAuth.Data.csproj", "{9022A72C-039E-4F5D-9B62-A6CB80363CF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ngWebLogin", "ngWebLogin\ngWebLogin.csproj", "{443231DC-8C5F-4873-BFF5-4873E786EC51}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{622E9DEA-2208-4A63-9DF3-16EFE327D5F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{622E9DEA-2208-4A63-9DF3-16EFE327D5F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{622E9DEA-2208-4A63-9DF3-16EFE327D5F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{622E9DEA-2208-4A63-9DF3-16EFE327D5F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CC87A01-3351-4F7D-AEC0-D984AB433AC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CC87A01-3351-4F7D-AEC0-D984AB433AC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CC87A01-3351-4F7D-AEC0-D984AB433AC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CC87A01-3351-4F7D-AEC0-D984AB433AC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{072F8532-9073-4F33-B79E-D5B57FC3A199}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{072F8532-9073-4F33-B79E-D5B57FC3A199}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{072F8532-9073-4F33-B79E-D5B57FC3A199}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{072F8532-9073-4F33-B79E-D5B57FC3A199}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9022A72C-039E-4F5D-9B62-A6CB80363CF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9022A72C-039E-4F5D-9B62-A6CB80363CF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9022A72C-039E-4F5D-9B62-A6CB80363CF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9022A72C-039E-4F5D-9B62-A6CB80363CF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{443231DC-8C5F-4873-BFF5-4873E786EC51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{443231DC-8C5F-4873-BFF5-4873E786EC51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{443231DC-8C5F-4873-BFF5-4873E786EC51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{443231DC-8C5F-4873-BFF5-4873E786EC51}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
