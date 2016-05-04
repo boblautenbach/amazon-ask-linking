@@ -14,6 +14,7 @@ namespace OAuth.Api.Providers
     {
         public override Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
         {
+            //TODO Validate client ID form amazon
             context.Validated();
             return Task.FromResult<object>(null);
         }

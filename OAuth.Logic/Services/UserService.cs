@@ -11,6 +11,7 @@ namespace OAuth.Logic.Services
 {
     public class UserService : IUserService
     {
+        //DB Serivce calls are samples of what woudl be a service call to an endpoint with users, etc
         public async Task<User> FindUser(string email)
         {
             User user = null;

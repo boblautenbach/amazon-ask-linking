@@ -247,9 +247,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Start\Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\OAuth.Logic\OAuth.Logic.csproj">
       <Project>{5cc87a01-3351-4f7d-aec0-d984ab433ac5}</Project>
