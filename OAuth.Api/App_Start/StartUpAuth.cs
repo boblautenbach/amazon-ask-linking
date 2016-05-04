@@ -11,6 +11,7 @@ using Autofac;
 using Autofac.Integration.WebApi;
 using OAuth.Logic.Services;
 using OAuth.Logic.Interfaces;
+using System.Web.Mvc;
 
 [assembly: OwinStartup(typeof(OAuth.Api.Startup))]
 namespace OAuth.Api
@@ -32,6 +33,8 @@ namespace OAuth.Api
 
             // Configure Web API with the dependency resolver.
             GlobalConfiguration.Configuration.DependencyResolver = resolver;
+
+            AreaRegistration.RegisterAllAreas();
 
             ConfigureOAuth(app);
 
