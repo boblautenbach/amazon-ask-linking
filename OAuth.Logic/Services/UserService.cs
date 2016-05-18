@@ -14,36 +14,45 @@ namespace OAuth.Logic.Services
         //DB Serivce calls are samples of what woudl be a service call to an endpoint with users, etc
         public async Task<User> FindUser(string email)
         {
-            User user = null;
-            try
-            {
+            try { 
                 var dbService = new MockUser();
 
-                user = dbService.GetUserDB(email);
+                return dbService.GetUserByEmail(email);
             }
             catch (Exception e)
             {
                 return null;
             }
-            return user;
         }
 
-        public async Task<bool> Validate(string username, string password)
+        public async Task<bool> ValidateUser(string username, string password)
         {
-            User user = null;
             try
             {
                 var dbService = new MockUser();
 
-                user = dbService.LoginInUser(username, password);
+                return dbService.LoginInUser(username, password);
 
             }
             catch (Exception e)
             {
                 return false;
             }
+        }
 
-            return (user != null);
+        public Client GetClientById(string clientId)
+        {
+            try
+            {
+                var dbService = new MockClient();
+
+                return dbService.GetClientById(clientId);
+
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
         }
     }
 }

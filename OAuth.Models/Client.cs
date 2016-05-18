@@ -8,7 +8,7 @@ namespace OAuth.Models
 {
     public class Client
     {
-        public long ClientId { get; set; }
+        public string ClientId { get; set; }
         public string ClientSecret { get; set; }
         public string ClientName { get; set; }
         public string AllowedOrigin { get; set; }

@@ -14,7 +14,58 @@ namespace OAuth.Api.Providers
     {
         public override Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
         {
-            //TODO Validate client ID form amazon
+            string clientId = string.Empty;
+            string clientSecret = string.Empty;
+
+            if (!context.TryGetBasicCredentials(out clientId, out clientSecret))
+            {
+                context.TryGetFormCredentials(out clientId, out clientSecret);
+            }
+
+            if (context.ClientId == null)
+            {
+                context.SetError("invalid_clientId", "ClientId should be sent.");
+                return Task.FromResult<object>(null);
+            }
+
+            var _repo = new UserService();
+            var client =  _repo.GetClientById(context.ClientId);
+
+            if (client == null)
+            {
+                context.SetError("invalid_clientId", string.Format("Client '{0}' is not registered in the system.", context.ClientId));
+                return Task.FromResult<object>(null);
+            }
+
+            if (client.SecretRequired)
+            {
+                if (string.IsNullOrWhiteSpace(clientSecret))
+                {
+                    context.SetError("invalid_clientId", "Client secret should be sent.");
+                    return Task.FromResult<object>(null);
+                }
+                else
+                {
+                    //Change this to a hash of some form
+                    //for added security  Helper.GetHash(clientSecret)
+                    if (client.ClientSecret != clientSecret)
+                    {
+                        context.SetError("invalid_clientId", "Client secret is invalid.");
+                        return Task.FromResult<object>(null);
+                    }
+                }
+            }
+
+            if (!client.Active)
+            {
+                context.SetError("invalid_clientId", "Client is inactive.");
+                return Task.FromResult<object>(null);
+            }
+
+            context.OwinContext.Set<string>("as:clientAllowedOrigin", client.AllowedOrigin);
+            //Future use of Refresh token
+            //context.OwinContext.Set<string>("as:clientRefreshTokenLifeTime", client.RefreshTokenLifetime.ToString());
+
             context.Validated();
             return Task.FromResult<object>(null);
         }
@@ -26,7 +77,7 @@ namespace OAuth.Api.Providers
 
             var _repo = new UserService();
 
-            var user = await _repo.Validate(context.UserName, context.Password);
+            var user = await _repo.ValidateUser(context.UserName, context.Password);
 
             if (!user)
             {

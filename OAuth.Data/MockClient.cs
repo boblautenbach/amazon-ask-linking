@@ -13,13 +13,14 @@ namespace OAuth.Data
 
         public MockClient()
         {
-            _clients.Add(new Client() { ClientId = 1, Active = true, AllowedOrigin = "*", ClientName = "app1", ClientSecret = "secret1", RefreshTokenLifetime = 1200, SecretRequired = true });
-            _clients.Add(new Client() { ClientId = 2, Active = true, AllowedOrigin = "*", ClientName = "app2", ClientSecret = "secret2", RefreshTokenLifetime = 1200, SecretRequired = true });
+            //Refresh token mock data for future implementation
+            _clients.Add(new Client() { ClientId = "1212", Active = true, AllowedOrigin = "*", ClientName = "app1", ClientSecret = "secret1", RefreshTokenLifetime = 1200, SecretRequired = false });
+            _clients.Add(new Client() { ClientId = "1313", Active = true, AllowedOrigin = "*", ClientName = "app2", ClientSecret = "secret2", RefreshTokenLifetime = 1200, SecretRequired = true });
 
         }
-        public Client GetClientsDB(string clientName, string clientSecret)
+        public Client GetClientById(string clientId)
         {
-            return _clients.FirstOrDefault(x => x.ClientName == clientName && x.ClientSecret == clientSecret);
+            return _clients.FirstOrDefault(x => x.ClientId == clientId);
         }
     }
 }

@@ -10,6 +10,6 @@ namespace OAuth.Logic.Interfaces
     public interface IUserService
     {
         Task<User> FindUser(string email);
-        Task<bool> Validate(string username, string password);
+        Client GetClientById(string clientId);
     }
 }
