@@ -18,7 +18,8 @@ You will be mock-redirected (mimicing going back to Amazon after a login).  The 
 
 Below are some examples
 
-Inline-style: 
+![alt text](OAuth.Models/images/token1.png)
+
 ![alt text](OAuth.Models/images/token1.png)
 
 
