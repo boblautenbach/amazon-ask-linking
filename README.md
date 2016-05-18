@@ -18,7 +18,7 @@ You will be mock-redirected (mimicing going back to Amazon after a login).  The 
 
 Below are some examples
 
-![alt text](OAuth.Models/images/token1.png)
+![alt text](OAuth.Models/images/token2.png)
 
 ![alt text](OAuth.Models/images/token1.png)
 
