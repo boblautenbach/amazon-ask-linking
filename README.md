@@ -19,7 +19,7 @@ You will be mock-redirected (mimicing going back to Amazon after a login).  The 
 Below are some examples
 
 Inline-style: 
-![alt text](amazon-ask-linking/OAuth.Models/images/token1.png "Logo Title Text 1")
+![alt text](OAuth.Models/images/token1.png)
 
 
 
