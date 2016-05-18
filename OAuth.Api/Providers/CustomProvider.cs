@@ -24,6 +24,9 @@ namespace OAuth.Api.Providers
 
             if (context.ClientId == null)
             {
+               // Uncomment the below line if you wish to not require a client_id
+                //context.Validated();
+                //comment the below line if you wish to not require a client_id
                 context.SetError("invalid_clientId", "ClientId should be sent.");
                 return Task.FromResult<object>(null);
             }
@@ -62,6 +65,7 @@ namespace OAuth.Api.Providers
                 return Task.FromResult<object>(null);
             }
 
+            //this is not required but would allow you to ensure specific origins are used per client
             context.OwinContext.Set<string>("as:clientAllowedOrigin", client.AllowedOrigin);
             //Future use of Refresh token
             //context.OwinContext.Set<string>("as:clientRefreshTokenLifeTime", client.RefreshTokenLifetime.ToString());
