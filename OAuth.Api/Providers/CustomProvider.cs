@@ -26,6 +26,7 @@ namespace OAuth.Api.Providers
             {
                // Uncomment the below line if you wish to not require a client_id
                 //context.Validated();
+                //
                 //comment the below line if you wish to not require a client_id
                 context.SetError("invalid_clientId", "ClientId should be sent.");
                 return Task.FromResult<object>(null);
