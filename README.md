@@ -16,6 +16,13 @@ Login as test@oauth.com with pwd = password
 
 You will be mock-redirected (mimicing going back to Amazon after a login).  The URL will contain the token you need.
 
+Below are some examples
+
+![alt text](OAuth.Models/images/token2.png)
+
+![alt text](OAuth.Models/images/token1.png)
+
+
 
 
 
