@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuth.Data", "OAuth.Data\OA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ngWebLogin", "ngWebLogin\ngWebLogin.csproj", "{443231DC-8C5F-4873-BFF5-4873E786EC51}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuthResource.API", "OAuthResource.API\OAuthResource.API.csproj", "{C2150DCB-4208-4BE4-92E1-02A90A28AF6A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{443231DC-8C5F-4873-BFF5-4873E786EC51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{443231DC-8C5F-4873-BFF5-4873E786EC51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{443231DC-8C5F-4873-BFF5-4873E786EC51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2150DCB-4208-4BE4-92E1-02A90A28AF6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2150DCB-4208-4BE4-92E1-02A90A28AF6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2150DCB-4208-4BE4-92E1-02A90A28AF6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2150DCB-4208-4BE4-92E1-02A90A28AF6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
