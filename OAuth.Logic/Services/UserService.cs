@@ -31,7 +31,7 @@ namespace OAuth.Logic.Services
             {
                 var dbService = new MockUser();
 
-                return dbService.LoginInUser(username, password);
+                return dbService.LogInUser(username, password);
 
             }
             catch (Exception e)

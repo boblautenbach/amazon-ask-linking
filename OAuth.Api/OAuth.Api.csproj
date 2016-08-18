@@ -215,8 +215,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\CustomProvider.cs" />
+    <Compile Include="Providers\RefreshTokenProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

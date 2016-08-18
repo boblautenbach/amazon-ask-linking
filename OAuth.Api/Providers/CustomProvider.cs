@@ -69,7 +69,8 @@ namespace OAuth.Api.Providers
             //this is not required but would allow you to ensure specific origins are used per client
             context.OwinContext.Set<string>("as:clientAllowedOrigin", client.AllowedOrigin);
             //Future use of Refresh token
-            //context.OwinContext.Set<string>("as:clientRefreshTokenLifeTime", client.RefreshTokenLifetime.ToString());
+            context.OwinContext.Set<string>("as:clientRefreshTokenLifeTime", client.RefreshTokenLifetime.ToString());
+
 
             context.Validated();
             return Task.FromResult<object>(null);
@@ -115,6 +116,26 @@ namespace OAuth.Api.Providers
             {
                 context.AdditionalResponseParameters.Add(property.Key, property.Value);
             }
+
+            return Task.FromResult<object>(null);
+        }
+        public override Task GrantRefreshToken(OAuthGrantRefreshTokenContext context)
+        {
+            var originalClient = context.Ticket.Properties.Dictionary["as:client_id"];
+            var currentClient = context.ClientId;
+
+            if (originalClient != currentClient)
+            {
+                context.SetError("invalid_clientId", "Refresh token is issued to a different clientId.");
+                return Task.FromResult<object>(null);
+            }
+
+            // Change auth ticket for refresh token requests
+            var newIdentity = new ClaimsIdentity(context.Ticket.Identity);
+            newIdentity.AddClaim(new Claim("newClaim", "newValue"));
+
+            var newTicket = new AuthenticationTicket(newIdentity, context.Ticket.Properties);
+            context.Validated(newTicket);
 
             return Task.FromResult<object>(null);
         }

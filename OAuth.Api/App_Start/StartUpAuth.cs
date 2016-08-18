@@ -18,6 +18,8 @@ namespace OAuth.Api
 {
     public class Startup
     {
+        public static OAuthAuthorizationServerOptions OAuthServerOptions { get; private set; }
+
         public void Configuration(IAppBuilder app)
         {
             HttpConfiguration config = new HttpConfiguration();
@@ -45,14 +47,15 @@ namespace OAuth.Api
 
         public void ConfigureOAuth(IAppBuilder app)
         {
-            OAuthAuthorizationServerOptions OAuthServerOptions = new OAuthAuthorizationServerOptions()
+             OAuthServerOptions = new OAuthAuthorizationServerOptions()
             {
                 AllowInsecureHttp = true,
                 TokenEndpointPath = new PathString("/token"),
                // AuthorizeEndpointPath = new PathString("/api/account/auth"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(1),
-                Provider = new CustomProvider()
-            };
+                Provider = new CustomProvider(),
+                 RefreshTokenProvider = new RefreshTokenProvider()
+             };
 
             // Token Generation
             app.UseOAuthAuthorizationServer(OAuthServerOptions);

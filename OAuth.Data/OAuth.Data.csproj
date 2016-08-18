@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MockClient.cs" />
+    <Compile Include="MockRefreshToken.cs" />
     <Compile Include="MockUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

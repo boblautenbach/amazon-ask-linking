@@ -9,7 +9,7 @@ namespace OAuth.Data
 {
     public class MockUser
     {
-        List<User> _users = new List<User>();
+        static List<User> _users = new List<User>();
 
         public MockUser()
         {
@@ -18,7 +18,7 @@ namespace OAuth.Data
             _users.Add(new User() { FirstName = "Tom", LastName = "Jones", Email = "tomjones@tom.com", Password = "password" });
 
         }
-        public bool LoginInUser(string email, string password)
+        public bool LogInUser(string email, string password)
         {
             return (_users.FirstOrDefault(x => x.Email == email && x.Password == password) != null);
         }

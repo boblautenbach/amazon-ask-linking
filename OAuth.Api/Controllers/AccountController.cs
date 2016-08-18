@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Microsoft.Owin.Security;
+using Microsoft.Owin.Security.DataHandler;
+using Microsoft.Owin.Security.DataProtection;
+using Microsoft.Owin.Security.OAuth;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -16,6 +20,12 @@ namespace OAuth.Api.Controllers
         [Route("")]
         public async Task<HttpResponseMessage> Get()
         {
+            var rt = Request.GetOwinContext().Request.Headers.Get("Authorization");
+            var ba = rt.Replace("Bearer ", "");
+
+            var p = Startup.OAuthServerOptions.AccessTokenFormat.Unprotect(ba);
+            var email = p.Properties.Dictionary.FirstOrDefault(x => x.Key == "userName");
+
             return Request.CreateResponse(HttpStatusCode.OK, "Success " + User.Identity.Name);
         }
     }
