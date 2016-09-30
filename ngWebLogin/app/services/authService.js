@@ -10,13 +10,18 @@ app.factory('authService', ['$http', '$q', 'localStorageService', function ($htt
     };
 
 
-    var _login = function (loginData, client_id) {
+    var _login = function (loginData, client_id, client_secret) {
 
-        var data = "grant_type=password&username=" + loginData.userName + "&password=" + loginData.password +"&client_id=" + client_id;
+        var postData = "grant_type=password&username=" + loginData.userName + "&password=" + loginData.password + "&client_id=" + client_id + "&client_secret=" + client_secret;
 
         var deferred = $q.defer();
 
-        $http.post(serviceBase + 'token', data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).success(function (response) {
+        $http({
+            method: 'POST',
+            url: serviceBase,
+            data: postData,
+            headers: {'Content-Type': 'application/x-www-form-urlencoded' }
+        }).success(function (response) {
 
             localStorageService.set('authorizationData', { token: response.access_token, userName: loginData.userName });
 
@@ -25,7 +30,7 @@ app.factory('authService', ['$http', '$q', 'localStorageService', function ($htt
 
             deferred.resolve(response);
 
-        }).error(function (err, status) {
+        }).error(function (err, status, headers, config) {
             deferred.reject(err);
         });
 
